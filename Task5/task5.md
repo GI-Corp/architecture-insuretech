@@ -23,7 +23,7 @@
 ### Основные сущности
 
 На основании текущего Swagger-контракта были выделены ключевые сущности:
-```
+```graphql
 type Client {
   id: ID!
   name: String
@@ -32,7 +32,7 @@ type Client {
   relatives: [Relative]
 }
 ```
-```
+```graphql
 type Document {
   id: ID!
   type: String
@@ -41,7 +41,7 @@ type Document {
   expiryDate: String
 }
 ```
-```
+```graphql
 type Relative {
   id: ID!
   relationType: String
@@ -60,7 +60,7 @@ GraphQL позволяет в одном запросе получить тол�
 **Примеры возможных запросов**
 
 1. Получение базовой информации о клиенте:
-```
+```graphql
 query {
   client(id: "1") {
     id
@@ -71,7 +71,7 @@ query {
 ```
 
 2. Получение клиента с его документами:
-```
+```graphql
 query {
   client(id: "1") {
     id
@@ -88,7 +88,7 @@ query {
 ```
 
 3. Получение полной информации: клиент + документы + родственники:
-```
+```graphql
 query {
   client(id: "1") {
     id
